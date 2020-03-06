@@ -5,8 +5,10 @@ let g:pymode_lint = 1
 let g:pymode_options_colorcolumn = 0
 set ts=4 sw=4
 set list
+set expandtab
 
-"Plug 'roxma/nvim-completion-manager'
+let g:pymode_lint_ignore = ["E501", "W404"]
+
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'preservim/nerdtree'
