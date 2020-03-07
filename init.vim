@@ -19,6 +19,7 @@ Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'tarekbecker/vim-yaml-formatter'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'mechatroner/rainbow_csv'
 call plug#end()
 
 set number
@@ -36,4 +37,3 @@ nnoremap <M-l> :PymodeLint<CR>
 set hidden
 nnoremap <M-n> :bnext<CR>
 nnoremap <M-p> :bprev<CR>
-
