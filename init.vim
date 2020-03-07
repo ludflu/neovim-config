@@ -19,7 +19,9 @@ Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'tarekbecker/vim-yaml-formatter'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'neovimhaskell/haskell-vim'
 Plug 'mechatroner/rainbow_csv'
+Plug 'joukevandermaas/vim-ember-hbs'
 call plug#end()
 
 set number
