@@ -22,6 +22,7 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'neovimhaskell/haskell-vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set number
