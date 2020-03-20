@@ -33,6 +33,7 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 map <C-n> :NERDTreeToggle<CR>
 filetype plugin on
+let NERDTreeShowHidden=1
 
 nnoremap <M-f> :PymodeLintAuto<CR>
 nnoremap <M-l> :PymodeLint<CR>
