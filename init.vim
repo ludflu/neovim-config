@@ -1,5 +1,5 @@
-let g:python_host_prog = '/home/jsnavely/project/pandas-venv/bin/python'
-let g:python3_host_prog = '/home/jsnavely/project/pandas-venv/bin/python'
+let g:python_host_prog = '/Users/jsnavely/project/pandas-env/bin/python'
+let g:python3_host_prog = '/Users/jsnavely/project/pandas-env/bin/python'
 let g:deoplete#enable_at_startup = 1
 let g:pymode_lint = 1
 let g:pymode_options_colorcolumn = 0
@@ -17,7 +17,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
-Plug 'tarekbecker/vim-yaml-formatter'
+Plug 'adrienverge/yamllint'
+Plug 'vim-syntastic/syntastic'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'neovimhaskell/haskell-vim'
 Plug 'mechatroner/rainbow_csv'
@@ -41,3 +42,15 @@ nnoremap <M-l> :PymodeLint<CR>
 set hidden
 nnoremap <M-n> :bnext<CR>
 nnoremap <M-p> :bprev<CR>
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_yaml_checkers = ['yamllint']
