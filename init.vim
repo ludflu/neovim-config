@@ -1,5 +1,5 @@
-let g:python_host_prog = '/Users/jsnavely/project/pandas-env/bin/python'
-let g:python3_host_prog = '/Users/jsnavely/project/pandas-env/bin/python'
+let g:python_host_prog = '/opt/homebrew/Caskroom/miniforge/base/envs/tf_m1/bin/python'
+let g:python3_host_prog = '/opt/homebrew/Caskroom/miniforge/base/envs/tf_m1/bin/python'
 let g:deoplete#enable_at_startup = 1
 let g:pymode_lint = 1
 let g:pymode_options_colorcolumn = 0
@@ -24,11 +24,17 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'tpope/vim-fugitive'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'liuchengxu/graphviz.vim'
+Plug 'svermeulen/vim-macrobatics'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 set number
 set visualbell
 
+let mapleader = ","
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -54,3 +60,35 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_yaml_checkers = ['yamllint']
+
+" Use <nowait> to override the default bindings which wait for another key press
+nmap <nowait> q <plug>(Mac_Play)
+nmap <nowait> gq <plug>(Mac_RecordNew)
+nmap <leader>mh :DisplayMacroHistory<cr>
+nmap <leader>mn <plug>(Mac_NameCurrentMacro)
+nmap <leader>me <plug>(Mac_SearchForNamedMacroAndPlay)
+
+
+" Use <nowait> to override the default bindings which wait for another key press
+nmap <nowait> q <plug>(Mac_Play)
+nmap <nowait> gq <plug>(Mac_RecordNew)
+
+nmap <leader>mh :DisplayMacroHistory<cr>
+
+nmap [m <plug>(Mac_RotateBack)
+nmap ]m <plug>(Mac_RotateForward)
+
+nmap <leader>ma <plug>(Mac_Append)
+nmap <leader>mp <plug>(Mac_Prepend)
+
+nmap <leader>mng <plug>(Mac_NameCurrentMacro)
+nmap <leader>mnf <plug>(Mac_NameCurrentMacroForFileType)
+nmap <leader>mns <plug>(Mac_NameCurrentMacroForCurrentSession)
+
+nmap <leader>mo <plug>(Mac_SearchForNamedMacroAndOverwrite)
+nmap <leader>mr <plug>(Mac_SearchForNamedMacroAndRename)
+nmap <leader>md <plug>(Mac_SearchForNamedMacroAndDelete)
+nmap <leader>me <plug>(Mac_SearchForNamedMacroAndPlay)
+nmap <leader>ms <plug>(Mac_SearchForNamedMacroAndSelect)
+
+
