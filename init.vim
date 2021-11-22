@@ -29,12 +29,12 @@ Plug 'liuchengxu/graphviz.vim'
 Plug 'svermeulen/vim-macrobatics'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set number
 set visualbell
 
-let mapleader = ","
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -91,4 +91,25 @@ nmap <leader>md <plug>(Mac_SearchForNamedMacroAndDelete)
 nmap <leader>me <plug>(Mac_SearchForNamedMacroAndPlay)
 nmap <leader>ms <plug>(Mac_SearchForNamedMacroAndSelect)
 
+
+" Help Vim recognize *.sbt and *.sc as Scala files
+au BufRead,BufNewFile *.sbt,*.sc set filetype=scala
+
+" Used to expand decorations in worksheets
+"nmap <Leader>ws <Plug>(coc-metals-expand-decoration)
+
+" Toggle panel with Tree Views
+nnoremap <silent> <space>t :<C-u>CocCommand metals.tvp<CR>
+" Toggle Tree View 'metalsPackages'
+nnoremap <silent> <space>tp :<C-u>CocCommand metals.tvp metalsPackages<CR>
+" Toggle Tree View 'metalsCompile'
+nnoremap <silent> <space>tc :<C-u>CocCommand metals.tvp metalsCompile<CR>
+" Toggle Tree View 'metalsBuild'
+nnoremap <silent> <space>tb :<C-u>CocCommand metals.tvp metalsBuild<CR>
+" Reveal current current class (trait or object) in Tree View 'metalsPackages'
+nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
+
+nnoremap <leader>b :ls<CR>:b<Space>
+nnoremap <leader>n :set nonumber!<CR>
+nnoremap <leader>c :s!,!,\r!g<cr>
 
