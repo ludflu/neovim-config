@@ -164,3 +164,8 @@ nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPacka
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>n :set nonumber!<CR>
 nnoremap <leader>c :s!,!,\r!g<cr>
+
+
+:nnoremap <Leader>q ciw""<Esc>P
+:nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+
