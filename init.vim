@@ -30,7 +30,7 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'tpope/vim-fugitive'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'liuchengxu/graphviz.vim'
-Plug 'svermeulen/vim-macrobatics'
+"Plug 'svermeulen/vim-macrobatics'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -163,9 +163,16 @@ nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPacka
 
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>n :set nonumber!<CR>
+
+"add a comma to every line
+nnoremap <leader>x :%s!$!,!g<cr>
+
+"break a comma delimited list into separate lines
 nnoremap <leader>c :s!,!,\r!g<cr>
 
+"change case
+:nnoremap <leader>u g~iw   
 
-:nnoremap <Leader>q ciw""<Esc>P
-:nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+"quote every line
+:nnoremap <leader>q :%s!^\(.*\)$!"\1"!g<cr>
 
