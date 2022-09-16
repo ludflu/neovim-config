@@ -1,5 +1,5 @@
-let g:python_host_prog = '/usr/local/bin/python3'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog = '/Users/jsnavely/project/nvim-python/venv/bin/python'
+let g:python3_host_prog = '/Users/jsnavely/project/nvim-python/venv/bin/python'
 let g:deoplete#enable_at_startup = 1
 let g:pymode_lint = 1
 let g:pymode_options_colorcolumn = 0
@@ -170,8 +170,11 @@ nnoremap <leader>x :%s!$!,!g<cr>
 "break a comma delimited list into separate lines
 nnoremap <leader>c :s!,!,\r!g<cr>
 
+"reformat file as json
+nnoremap <leader>j :%!jq .<cr>
+
 "change case
-:nnoremap <leader>u g~iw   
+:nnoremap <leader>u g~iw
 
 "quote every line
 :nnoremap <leader>q :%s!^\(.*\)$!"\1"!g<cr>
