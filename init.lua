@@ -20,7 +20,6 @@ Plug('vim-airline/vim-airline-themes')
 Plug('rust-lang/rust.vim')
 Plug('vim-syntastic/syntastic')
 Plug('hashivim/vim-terraform')
-Plug('dense-analysis/ale')
 Plug('tpope/vim-tbone')
 Plug('Shougo/vimproc.vim', {['do'] = 'make'})
 Plug('ctrlpvim/ctrlp.vim')
@@ -48,7 +47,6 @@ vim.call('plug#end')
 -- Plugin configurations
 vim.g.ctrlp_by_filename = 1
 vim.g.syntastic_python_checkers = {'mypy', 'flake8'}
-vim.b.ale_linters = {'yamllint', 'tflint'}
 
 -- Editor settings
 vim.o.number = true
@@ -138,8 +136,6 @@ vim.api.nvim_create_autocmd("FileType", {
     command = "syntax match Comment +\\/\\/.*$+"
 })
 
--- ALE settings
-vim.fn['ale#Set']('yaml_yamllint_options', '')
 
 -- Completion mappings
 vim.keymap.set('i', '<C-n>', '<Cmd>call pum#map#insert_relative(+1)<CR>')
